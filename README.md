@@ -1,4 +1,4 @@
-﻿# SKitLs.Utils.Loggers
+﻿# SKitLs.Utils.Localizations ![GitHub](https://img.shields.io/github/license/Sargeras02/SKitLs.Utils.Localizations) ![Nuget](https://img.shields.io/nuget/v/SKitLs.Utils.Localizations) [![CodeFactor](https://www.codefactor.io/repository/github/sargeras02/skitls.utils.localizations/badge)](https://www.codefactor.io/repository/github/sargeras02/skitls.utils.localizations) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sargeras02/SKitLs.Utils.Localizations)
 
 Comprehensive localization framework that facilitates seamless string translation and adaptation for diverse language contexts.
 
@@ -32,10 +32,11 @@ while ensuring a professional and localized user experience.
 
 ## Setup
 
-## Requirements
+### Requirements
 
-This project does not have any external dependencies.
-It is a self-contained solution that does not require the installation of additional libraries or components.
+- Newtonsoft.Json 13.0.3 or higher
+
+Before running the project, please ensure that you have the following dependencies installed and properly configured in your development environment.
 
 ### Installation
 

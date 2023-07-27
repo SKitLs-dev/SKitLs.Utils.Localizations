@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>$(AssemblyName)</Title>
-    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.1</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <PackageProjectUrl>https://github.com/Sargeras02/SKitLs.Utils.Localizations.git</PackageProjectUrl>
     <Version>$(AssemblyVersion)</Version>
@@ -15,18 +15,11 @@
     <Copyright>Copyright (C) Sargeras02 2023</Copyright>
     <PackageIcon>libIcon_localizations.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Localization keys extended:
-(+) ES
-(+) FR
-(+) DE
-(+) ZH
-(+) JA
-(+) KO
-(+) IT
-(+) PT</PackageReleaseNotes>
+    <PackageReleaseNotes>DefaultLocalizator interior minor fix.
+README file update.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageTags>Localization, Internationalization, Multilingual Support, Globalization</PackageTags>
+    <PackageTags>Localization, Internationalization, Multilingual, Globalization</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

@@ -11,6 +11,8 @@ namespace SKitLs.Utils.Localizations.Model
     /// </summary>
     public class DefaultLocalizator : ILocalizator
     {
+        public const string LocalExtension = ".json";
+
         public string NotDefinedKey => "local.KeyNotDefined";
         public string LocalsPath { get; private set; }
         private Dictionary<LangKey, Dictionary<string, string>> Localizations { get; set; }
@@ -24,7 +26,7 @@ namespace SKitLs.Utils.Localizations.Model
             LocalsPath = localsPath;
             Localizations = new();
             if (!Directory.Exists(LocalsPath)) Directory.CreateDirectory(LocalsPath);
-            var files = Directory.GetFiles(LocalsPath).Select(x => new FileInfo(x)).Where(x => x.Extension == ".json");
+            var files = Directory.GetFiles(LocalsPath).Select(x => new FileInfo(x)).Where(x => x.Extension == LocalExtension);
             foreach (LangKey lang in Enum.GetValues(typeof(LangKey)))
             {
                 string? langName = Enum.GetName(typeof(LangKey), lang);
@@ -34,7 +36,7 @@ namespace SKitLs.Utils.Localizations.Model
                     using var reader = new StreamReader(lFile.FullName);
                     var json = reader.ReadToEnd();
                     var langCollection = JsonConvert.DeserializeObject<Dictionary<string, string>>(json)
-                        ?? throw new Exception("Deserialize");
+                        ?? throw new Exception($"Was not able to deserialize package with {langName} language ({lFile.FullName})");
                     if (Localizations.ContainsKey(lang))
                     {
                         foreach (var pair in langCollection)
