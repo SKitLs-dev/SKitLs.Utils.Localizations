@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>$(AssemblyName)</Title>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <FileVersion>$(AssemblyVersion)</FileVersion>
+    <PackageProjectUrl>https://github.com/Sargeras02/SKitLs.Utils.Localizations.git</PackageProjectUrl>
+    <Version>$(AssemblyVersion)</Version>
+    <Description>Comprehensive localization framework that facilitates seamless string translation and adaptation for diverse language contexts.</Description>
+    <Authors>Sargeras02, SKit-Labs</Authors>
+    <Copyright>Copyright (C) Sargeras02 2023</Copyright>
+    <PackageIcon>libIcon_localizations.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Localization keys extended:
+(+) ES
+(+) FR
+(+) DE
+(+) ZH
+(+) JA
+(+) KO
+(+) IT
+(+) PT</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageTags>Localization, Internationalization, Multilingual Support, Globalization</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\libIcon_localizations.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
