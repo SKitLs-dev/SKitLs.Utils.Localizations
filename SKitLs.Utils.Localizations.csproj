@@ -6,20 +6,20 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>$(AssemblyName)</Title>
-    <AssemblyVersion>2.1.1</AssemblyVersion>
+    <AssemblyVersion>2.2.0</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <PackageProjectUrl>https://github.com/Sargeras02/SKitLs.Utils.Localizations.git</PackageProjectUrl>
     <Version>$(AssemblyVersion)</Version>
-    <Description>Comprehensive localization framework that facilitates seamless string translation and adaptation for diverse language contexts.</Description>
+    <Description>Comprehensive localization package that facilitates seamless string translation and adaptation for diverse language contexts.</Description>
     <Authors>Sargeras02, SKit-Labs</Authors>
     <Copyright>Copyright (C) Sargeras02 2023</Copyright>
     <PackageIcon>libIcon_localizations.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>DefaultLocalizator interior minor fix.
-README file update.</PackageReleaseNotes>
+    <PackageReleaseNotes>XML Docimentation Included</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageTags>Localization, Internationalization, Multilingual, Globalization</PackageTags>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

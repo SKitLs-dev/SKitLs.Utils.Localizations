@@ -11,9 +11,18 @@ namespace SKitLs.Utils.Localizations.Model
     /// </summary>
     public class DefaultLocalizator : ILocalizator
     {
+        /// <summary>
+        /// Determines localization resource files extension.
+        /// </summary>
         public const string LocalExtension = ".json";
 
+        /// <summary>
+        /// Represents the key indicating that the requested string is not defined in the specified language.
+        /// </summary>
         public string NotDefinedKey => "local.KeyNotDefined";
+        /// <summary>
+        /// Represents the path to the localization resource files.
+        /// </summary>
         public string LocalsPath { get; private set; }
         private Dictionary<LangKey, Dictionary<string, string>> Localizations { get; set; }
 
