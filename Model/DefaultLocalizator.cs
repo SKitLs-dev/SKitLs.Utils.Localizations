@@ -68,8 +68,21 @@ namespace SKitLs.Utils.Localizations.Model
         /// The localized string based on the specified language key and key identifier, or a fallback string
         /// if the requested string is not defined in the specified language.
         /// </returns>
-        public string ResolveString(LangKey lang, string key, params string?[] format)
-            => InternalResolveString(lang, key, format) ?? FallbackString(lang, key, format);
+        public string? ResolveString(LangKey lang, string key, params string?[] format) => InternalResolveString(lang, key, format);
+
+        /// <summary>
+        /// Resolves the localized string for the specified language key and key identifier, with optional format parameters.
+        /// </summary>
+        /// <param name="lang">The language key for localization.</param>
+        /// <param name="key">The unique identifier for the localized string.</param>
+        /// <param name="format">Optional. An array of strings to be formatted into the resolved localized string.</param>
+        /// <returns>
+        /// The localized string based on the specified language key and key identifier, or a fallback string
+        /// if the requested string is not defined in the specified language.
+        /// </returns>
+        public string ResolveStringOrFallback(LangKey lang, string key, params string?[] format) => InternalResolveString(lang, key, format)
+            ?? FallbackString(lang, key, format);
+
         private string? InternalResolveString(LangKey lang, string key, params string?[] format)
         {
             if (!(Localizations.ContainsKey(lang) && Localizations[lang].ContainsKey(key)))
@@ -79,6 +92,7 @@ namespace SKitLs.Utils.Localizations.Model
 
             return string.Format(Localizations[lang][key], format);
         }
+
         private string FallbackString(LangKey lang, string key, params string?[] format)
         {
             var reply = InternalResolveString(LangKey.EN, NotDefinedKey, Enum.GetName(lang), key, LocalsPath)
