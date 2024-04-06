@@ -40,7 +40,7 @@ namespace SKitLs.Utils.Localizations.Model
         {
             LocalsPath = localsPath;
             DefaultLanguage = defaultLanguage;
-            Localizations = new();
+            Localizations = [];
             LoadContent();
         }
 
@@ -68,7 +68,7 @@ namespace SKitLs.Utils.Localizations.Model
                     {
                         if (!Localizations.TryGetValue(lk.Key, out Dictionary<LanguageCode, string>? locals))
                         {
-                            locals = new Dictionary<LanguageCode, string>();
+                            locals = [];
                             Localizations.Add(lk.Key, locals);
                         }
                         locals.Add(lang, lk.Value);
@@ -78,27 +78,27 @@ namespace SKitLs.Utils.Localizations.Model
         }
 
         /// <inheritdoc/>
-        public string? ResolveString(LanguageCode? lang, string key, params string?[] format) => InternalResolveString(lang, key, format);
+        public string? ResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format) => InternalResolveString(lang, key, resolveDefault, format);
 
         /// <inheritdoc/>
-        public string ResolveStringOrFallback(LanguageCode? lang, string key, params string?[] format) => InternalResolveString(lang, key, format)
-            ?? FallbackString(lang, key, format);
+        public string ResolveStringOrFallback(LanguageCode? lang, string key, bool resolveDefault, params string?[] format) => InternalResolveString(lang, key, resolveDefault, format)
+            ?? FallbackString(lang, key, resolveDefault, format);
 
-        private string? InternalResolveString(LanguageCode? lang, string key, params string?[] format)
+        private string? InternalResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format)
         {
             if (Localizations.TryGetValue(key, out Dictionary<LanguageCode, string>? locals))
             {
                 if (lang is not null && locals.TryGetValue(lang.Value, out string? local))
                     return string.Format(local, format);
-                else if (locals.TryGetValue(DefaultLanguage, out string? defaultLocal))
+                else if (resolveDefault && locals.TryGetValue(DefaultLanguage, out string? defaultLocal))
                     return string.Format(defaultLocal, format);
             }
             return null;
         }
 
-        private string FallbackString(LanguageCode? lang, string key, params string?[] format)
+        private string FallbackString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format)
         {
-            var reply = InternalResolveString(lang, NotDefinedKey, Enum.GetName(lang ?? DefaultLanguage), key, LocalsPath)
+            var reply = InternalResolveString(lang, NotDefinedKey, resolveDefault, Enum.GetName(lang ?? DefaultLanguage), key, LocalsPath)
                 ?? $"String Data is not defined ({key}:{Enum.GetName(lang ?? DefaultLanguage)}). Format params: {string.Join(", ", format)}";
             return format.Length > 0 ? reply[..(reply.Length - 2)] + "." : reply + "None";
         }

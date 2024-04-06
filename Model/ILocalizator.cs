@@ -27,9 +27,10 @@ namespace SKitLs.Utils.Localizations.Localizators
         /// </summary>
         /// <param name="lang">The language key for localization.</param>
         /// <param name="key">The unique identifier for the localized string.</param>
+        /// <param name="resolveDefault">Specifies whether to resolve the key in the default language if not found in the specified language.</param>
         /// <param name="format">Optional. An array of strings to be formatted into the resolved localized string.</param>
         /// <returns>The localized string based on the specified language key and key identifier.</returns>
-        public string? ResolveString(LanguageCode? lang, string key, params string?[] format);
+        public string? ResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format);
 
         /// <summary>
         /// Resolves the localized string for the specified language key and key identifier, with optional format parameters,
@@ -37,8 +38,9 @@ namespace SKitLs.Utils.Localizations.Localizators
         /// </summary>
         /// <param name="lang">The language key for localization.</param>
         /// <param name="key">The unique identifier for the localized string.</param>
+        /// <param name="resolveDefault">Specifies whether to resolve the key in the default language if not found in the specified language.</param>
         /// <param name="format">Optional. An array of strings to be formatted into the resolved localized string.</param>
         /// <returns>The localized string based on the specified language key and key identifier, or a fallback string if the localized string is not found.</returns>
-        public string ResolveStringOrFallback(LanguageCode? lang, string key, params string?[] format);
+        public string ResolveStringOrFallback(LanguageCode? lang, string key, bool resolveDefault, params string?[] format);
     }
 }

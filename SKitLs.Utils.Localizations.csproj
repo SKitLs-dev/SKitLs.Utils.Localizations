@@ -6,26 +6,21 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>$(AssemblyName)</Title>
-    <AssemblyVersion>3.0.0</AssemblyVersion>
+    <AssemblyVersion>3.0.1</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <PackageProjectUrl>https://github.com/SKitLs-dev/SKitLs.Utils.Localizations.git</PackageProjectUrl>
     <Version>$(AssemblyVersion)</Version>
-    <Description>Comprehensive localization package that facilitates seamless string translation and adaptation for diverse language contexts.</Description>
+    <Description>Comprehensive localization package that facilitates seamless string translation and adaptation for diverse language contexts.
+
+Supports 120+ IETF languages.
+
+https://en.wikipedia.org/wiki/IETF_language_tag</Description>
     <Authors>SKitLs, Sargeras02</Authors>
     <Copyright>Copyright (C) 2023-2024, SKitLs</Copyright>
     <PackageIcon>libIcon_localizations.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>(~) Renamed: LangKey -&gt; LanguageCode
-(+) Added: 120+ IETF languages support
-https://en.wikipedia.org/wiki/IETF_language_tag
-
-(~) Renamed: DefaultLocalizator -&gt; StoredLocalizator
-~ Updated: internal architecture
-
-(+) Added: static LangHelper class
-
-(~) Updated: namespaces
-(~) Updated: README</PackageReleaseNotes>
+    <PackageReleaseNotes>(~) Updated: ResolveString(... bool resolveDefault) added
+(~) Updated: StoredLocalizator internal updates</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageTags>Localization, Internationalization, Multilingual, Globalization, IETF</PackageTags>
