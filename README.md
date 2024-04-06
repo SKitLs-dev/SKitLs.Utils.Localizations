@@ -1,42 +1,16 @@
-﻿# SKitLs.Utils.Localizations ![GitHub](https://img.shields.io/github/license/Sargeras02/SKitLs.Utils.Localizations) ![Nuget](https://img.shields.io/nuget/v/SKitLs.Utils.Localizations) [![CodeFactor](https://www.codefactor.io/repository/github/sargeras02/skitls.utils.localizations/badge)](https://www.codefactor.io/repository/github/sargeras02/skitls.utils.localizations) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sargeras02/SKitLs.Utils.Localizations)
+﻿# SKitLs.Utils.Localizations ![GitHub](https://img.shields.io/github/license/Sargeras02/SKitLs.Utils.Localizations) ![Nuget](https://img.shields.io/nuget/v/SKitLs.Utils.Localizations) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sargeras02/SKitLs.Utils.Localizations) [![CodeFactor](https://www.codefactor.io/repository/github/skitls-dev/skitls.utils.localizations/badge)](https://www.codefactor.io/repository/github/skitls-dev/skitls.utils.localizations)
 
-Comprehensive localization framework that facilitates seamless string translation and adaptation for diverse language contexts.
+Comprehensive localization package that facilitates seamless string translation and adaptation for diverse language contexts.
 
-## Description
+## Usage
 
-The project consists of three essential elements, each contributing to a robust and efficient localization mechanism.
-
-1. `enum LangKey`:
-
-    The LangKey enumeration comprises language keys essential for localization purposes.
-    It provides a standardized set of language identifiers, enabling clear categorization
-    and streamlined handling of localized content for diverse language options.
-
-2. `interface ILocalizator`
-    
-    The ILocalizator interface serves as a specialized mechanism for localizing strings, leveraging the provided language key.
-    By adhering to this interface, developers can seamlessly integrate the localization functionality into their applications,
-    allowing for enhanced user experience across various language preferences.
-
-3. `class DefaultLocalizator`:
-    
-    The DefaultLocalizator class represents a specialized service that empowers efficient string localization
-    based on the language key supplied.
-    Serving as a default realization of the ILocalizator interface, this class offers a reliable and readily available solution
-    for developers seeking to implement localization capabilities in their projects.
-    It ensures the seamless integration of localized content, promoting a user-friendly experience within diverse language contexts.
-
-By combining the elements of the ILocalizator interface, the LangKey enumeration, and the DefaultLocalizator class,
-the project delivers a comprehensive localization solution to enhance the global reach and appeal of applications
-while ensuring a professional and localized user experience.
+For documentation and usage examples [see wiki](https://github.com/SKitLs-dev/SKitLs.Utils.Localizations/wiki).
 
 ## Setup
 
 ### Requirements
 
-- Newtonsoft.Json 13.0.3 or higher
-
-Before running the project, please ensure that you have the following dependencies installed and properly configured in your development environment.
+- Newtonsoft.Json
 
 ### Installation
 
@@ -76,80 +50,6 @@ Before running the project, please ensure that you have the following dependenci
 
 Please note that each method may have specific requirements or configurations that need to be followed for successful installation.
 Refer to the project's documentation for any additional steps or considerations.
-
-## Usage
-
-1. Create locals JSON
-
-    "path/to/locals/en.name.json"
-    ```JSON
-    {
-        "local.KeyNotDefined": "String with a key {1} is not defined in language {0} ({2}). Format params: ",
-        "welcome_message": "Welcome to the project!",
-        "greeting": "Welcome, {0}!",
-        "farewell_message": "See you soon!"
-    }
-    ```
-
-    "path/to/locals/ru.name.json"
-    ```JSON
-    {
-        "local.KeyNotDefined": "Строка с ключом {1} не определена в языковом пакете {0} ({2}). Параметры форматирования: ",
-        "welcome_message": "Добро пожаловать в проект!",
-        "greeting": "Добро пожаловать, {0}!",
-        "farewell_message": "До встречи!"
-    }
-    ```
-
-    "path/to/locals/fr.name.json"
-    ```JSON
-    {
-        "local.KeyNotDefined": "La chaîne avec une clé {1} n'est pas définie dans le langage {0} ({2}). Paramètres de format: ",
-        "welcome_message": "Bienvenue dans le projet!",
-        "greeting": "Bienvenue, {0}!",
-    }
-    ```
-
-    "path/to/locals/es.name.json"
-    ```JSON
-    { }
-    ```
-
-2. Initialize the DefaultLocalizator:
-
-    ```C#
-    ILocalizator localizator = new DefaultLocalizator("path/to/locals"); // "resources/locals" by default
-    ```
-
-3. Resolve Localized Strings:
-
-    ```C#
-    // Example: Resolve a localized string for the English language (EN) with a specific key.
-    string localizedString = localizator.ResolveString(LangKey.EN, "welcome_message");
-    // -> Welcome to the project!
-
-    // Example: Resolve a localized string with format parameters.
-    string formattedString = localizator.ResolveString(LangKey.RU, "greeting", "John Doe");
-    // -> Добро пожаловать, John Doe!
-    ```
-
-4. Fallback Localization:
-
-    ```C#
-    // Example: Fallback to English (EN) if the string is not defined in the specified language.
-    string fallbackString = localizator.ResolveString(LangKey.FR, "farewell_message");
-    // [FR.farewell_message = None] => [EN.farewell_message]
-    // -> See you soon!
-
-    // Example: Fallback to a predefined "Not Defined" string with format parameters.
-    string notDefinedString = localizator.ResolveString(LangKey.ES, "invalid_input", "param1", "param2");
-    // [ES.invalid_input = None] => [EN.invalid_input = None] => [EN.NotDefined]
-    // -> String with a key invalid_input is not defined in language ES ("path/to/locals"). Format params: param1, param2.
-    ```
-
-By following these steps, you can seamlessly integrate the localization framework into your project, ensuring a smooth and localized user experience.
-
-Customize the localization resource files to cater to different language options and enhance the international appeal of your application.
 
 ## Contributors
 
