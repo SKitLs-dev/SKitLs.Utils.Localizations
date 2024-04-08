@@ -10,21 +10,12 @@ namespace SKitLs.Utils.Localizations.Model
     /// This implementation, <see cref="StoredLocalizator"/>, optimizes performance by preloading all localizations during initialization and storing them as strings,
     /// trading memory consumption for increased speed.
     /// </summary>
-    public class StoredLocalizator : ILocalizator
+    public class StoredLocalizator : LocalizatorBase
     {
         /// <summary>
         /// Determines the extension of localization resource files.
         /// </summary>
         public const string LocalExtension = ".json";
-
-        /// <inheritdoc/>
-        public string NotDefinedKey { get; set; } = "local.KeyNotDefined";
-
-        /// <inheritdoc/>
-        public LanguageCode DefaultLanguage { get; set; }
-
-        /// <inheritdoc/>
-        public string LocalsPath { get; private set; }
 
         /// <summary>
         /// Dictionary storing localizations for each language code.
@@ -36,10 +27,8 @@ namespace SKitLs.Utils.Localizations.Model
         /// </summary>
         /// <param name="localsPath">The path to the localization resource files.</param>
         /// <param name="defaultLanguage">The path to the localization resource files.</param>
-        public StoredLocalizator(string localsPath, LanguageCode defaultLanguage = LanguageCode.EN)
+        public StoredLocalizator(string localsPath, LanguageCode defaultLanguage = LanguageCode.EN) : base(localsPath, defaultLanguage)
         {
-            LocalsPath = localsPath;
-            DefaultLanguage = defaultLanguage;
             Localizations = [];
             LoadContent();
         }
@@ -77,14 +66,7 @@ namespace SKitLs.Utils.Localizations.Model
             }
         }
 
-        /// <inheritdoc/>
-        public string? ResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format) => InternalResolveString(lang, key, resolveDefault, format);
-
-        /// <inheritdoc/>
-        public string ResolveStringOrFallback(LanguageCode? lang, string key, bool resolveDefault, params string?[] format) => InternalResolveString(lang, key, resolveDefault, format)
-            ?? FallbackString(lang, key, resolveDefault, format);
-
-        private string? InternalResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format)
+        protected override string? InternalResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format)
         {
             if (Localizations.TryGetValue(key, out Dictionary<LanguageCode, string>? locals))
             {
@@ -94,13 +76,6 @@ namespace SKitLs.Utils.Localizations.Model
                     return string.Format(defaultLocal, format);
             }
             return null;
-        }
-
-        private string FallbackString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format)
-        {
-            var reply = InternalResolveString(lang, NotDefinedKey, resolveDefault, Enum.GetName(lang ?? DefaultLanguage), key, LocalsPath)
-                ?? $"String Data is not defined ({key}:{Enum.GetName(lang ?? DefaultLanguage)}). Format params: {string.Join(", ", format)}";
-            return format.Length > 0 ? reply[..(reply.Length - 2)] + "." : reply + "None";
         }
     }
 }

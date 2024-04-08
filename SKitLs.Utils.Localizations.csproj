@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>$(AssemblyName)</Title>
-    <AssemblyVersion>3.0.1</AssemblyVersion>
+    <AssemblyVersion>3.1.0</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <PackageProjectUrl>https://github.com/SKitLs-dev/SKitLs.Utils.Localizations.git</PackageProjectUrl>
     <Version>$(AssemblyVersion)</Version>
@@ -19,8 +19,9 @@ https://en.wikipedia.org/wiki/IETF_language_tag</Description>
     <Copyright>Copyright (C) 2023-2024, SKitLs</Copyright>
     <PackageIcon>libIcon_localizations.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>(~) Updated: ResolveString(... bool resolveDefault) added
-(~) Updated: StoredLocalizator internal updates</PackageReleaseNotes>
+    <PackageReleaseNotes>(+) Added: LocalizatorBase
+(+) Added: GateLocalizator
+(~) Updated: StoredLocalizator</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageTags>Localization, Internationalization, Multilingual, Globalization, IETF</PackageTags>
