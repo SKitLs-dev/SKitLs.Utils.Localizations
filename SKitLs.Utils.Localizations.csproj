@@ -50,4 +50,8 @@ https://en.wikipedia.org/wiki/IETF_language_tag</Description>
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="docs\" />
+  </ItemGroup>
+
 </Project>
