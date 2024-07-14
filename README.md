@@ -1,4 +1,4 @@
-﻿# SKitLs.Utils.Localizations ![GitHub](https://img.shields.io/github/license/Sargeras02/SKitLs.Utils.Localizations) ![Nuget](https://img.shields.io/nuget/v/SKitLs.Utils.Localizations) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sargeras02/SKitLs.Utils.Localizations) [![CodeFactor](https://www.codefactor.io/repository/github/skitls-dev/skitls.utils.localizations/badge)](https://www.codefactor.io/repository/github/skitls-dev/skitls.utils.localizations)
+﻿# SKitLs.Utils.Localizations ![GitHub](https://img.shields.io/github/license/Sargeras02/SKitLs.Utils.Localizations) ![Nuget](https://img.shields.io/nuget/v/SKitLs.Utils.Localizations) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sargeras02/SKitLs.Utils.Localizations)
 
 Comprehensive localization package that facilitates seamless string translation and adaptation for diverse language contexts.
 
@@ -7,10 +7,6 @@ Comprehensive localization package that facilitates seamless string translation 
 For documentation and usage examples [see wiki](https://github.com/SKitLs-dev/SKitLs.Utils.Localizations/wiki).
 
 ## Setup
-
-### Requirements
-
-- Newtonsoft.Json
 
 ### Installation
 

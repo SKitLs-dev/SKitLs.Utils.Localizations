@@ -66,6 +66,7 @@ namespace SKitLs.Utils.Localizations.Model
             }
         }
 
+        /// <inheritdoc/>
         protected override string? InternalResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format)
         {
             if (Localizations.TryGetValue(key, out Dictionary<LanguageCode, string>? locals))
