@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>$(AssemblyName)</Title>
-    <AssemblyVersion>3.2.0</AssemblyVersion>
+    <AssemblyVersion>3.2.1</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <PackageProjectUrl>https://github.com/SKitLs-dev/SKitLs.Utils.Localizations.git</PackageProjectUrl>
     <Version>$(AssemblyVersion)</Version>

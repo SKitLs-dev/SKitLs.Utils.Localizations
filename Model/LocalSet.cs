@@ -19,5 +19,11 @@
         /// Gets or sets an array of objects to be formatted into the localized string.
         /// </summary>
         public string?[] Format { get; set; } = format ?? [];
+
+        /// <summary>
+        /// Implicitly converts a string key to a <see cref="LocalSet"/> instance.
+        /// </summary>
+        /// <param name="key">The localization key to be converted.</param>
+        public static implicit operator LocalSet(string key) => new(key, null);
     }
 }
