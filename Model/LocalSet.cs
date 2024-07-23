@@ -18,7 +18,7 @@
         /// <summary>
         /// Gets or sets an array of objects to be formatted into the localized string.
         /// </summary>
-        public string?[] Format { get; set; } = (string?[])(format is not null ? format.Select(x => x?.ToString()) : []);
+        public string?[] Format { get; set; } = format is not null ? format.Select(x => x?.ToString()).ToArray() : [];
 
         /// <summary>
         /// Implicitly converts a string key to a <see cref="LocalSet"/> instance.
