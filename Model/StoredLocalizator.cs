@@ -27,7 +27,7 @@ namespace SKitLs.Utils.Localizations.Model
         /// </summary>
         /// <param name="localsPath">The path to the localization resource files.</param>
         /// <param name="defaultLanguage">The path to the localization resource files.</param>
-        public StoredLocalizator(string localsPath, LanguageCode defaultLanguage = LanguageCode.EN) : base(localsPath, defaultLanguage)
+        public StoredLocalizator(string localsPath = "Resources/Locals", LanguageCode defaultLanguage = LanguageCode.EN) : base(localsPath, defaultLanguage)
         {
             Localizations = [];
             LoadContent();

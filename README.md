@@ -2,9 +2,13 @@
 
 Comprehensive localization package that facilitates seamless string translation and adaptation for diverse language contexts.
 
-## Usage
-
-For documentation and usage examples [see wiki](https://github.com/SKitLs-dev/SKitLs.Utils.Localizations/wiki).
+## Contents
+- [Setup](#Setup)
+- [Usage](#Usage)
+- [Contributors](#Contributors)
+- [License](#License)
+- [Developer contact](#Developer-contact)
+- [Notes](#Notes)
 
 ## Setup
 
@@ -46,6 +50,10 @@ For documentation and usage examples [see wiki](https://github.com/SKitLs-dev/SK
 
 Please note that each method may have specific requirements or configurations that need to be followed for successful installation.
 Refer to the project's documentation for any additional steps or considerations.
+
+## Usage
+
+For documentation and usage examples [see wiki](https://github.com/SKitLs-dev/SKitLs.Utils.Localizations/wiki).
 
 ## Contributors
 

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using SKitLs.Utils.Localizations.Languages;
+using SKitLs.Utils.Localizations.Localizators;
 
 namespace SKitLs.Utils.Localizations.Model
 {
@@ -13,7 +14,7 @@ namespace SKitLs.Utils.Localizations.Model
     /// </remarks>
     /// <param name="localsPath">The path to the localization resource files.</param>
     /// <param name="defaultLanguage">The path to the localization resource files.</param>
-    public class GateLocalizator(string localsPath, LanguageCode defaultLanguage = LanguageCode.EN) : LocalizatorBase(localsPath, defaultLanguage)
+    public class GateLocalizator(string localsPath = "Resources/Locals", LanguageCode defaultLanguage = LanguageCode.EN) : LocalizatorBase(localsPath, defaultLanguage)
     {
         /// <summary>
         /// Determines the extension of localization resource files.

@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>$(AssemblyName)</Title>
-    <AssemblyVersion>3.2.3</AssemblyVersion>
+    <AssemblyVersion>3.2.4</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <PackageProjectUrl>https://github.com/SKitLs-dev/SKitLs.Utils.Localizations.git</PackageProjectUrl>
     <Version>$(AssemblyVersion)</Version>
@@ -19,7 +19,10 @@ https://en.wikipedia.org/wiki/IETF_language_tag</Description>
     <Copyright>Copyright (C) 2023-2024, SKitLs</Copyright>
     <PackageIcon>libIcon_localizations.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>(~) Fixed: LocalSet object[] ctor critical cast bug</PackageReleaseNotes>
+    <PackageReleaseNotes>(~) LocalSet: overridden ToString()
+(~) StoredLocalizator: default localsPath ("Resources/Locals")
+(~) GateLocalizator: default localsPath ("Resources/Locals")
+(~) Updated Readme</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageTags>Localization, Internationalization, Multilingual, Globalization, IETF</PackageTags>
@@ -35,6 +38,7 @@ https://en.wikipedia.org/wiki/IETF_language_tag</Description>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SKitLs.Utils.Extensions" Version="0.2.0" />
   </ItemGroup>
 
   <ItemGroup>

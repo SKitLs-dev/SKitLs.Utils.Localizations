@@ -1,4 +1,6 @@
-﻿namespace SKitLs.Utils.Localizations.Model
+﻿using SKitLs.Utils.Extensions.Lists;
+
+namespace SKitLs.Utils.Localizations.Model
 {
     /// <summary>
     /// Represents a set of localization data, including a key for the localized string and optional format parameters.
@@ -25,5 +27,8 @@
         /// </summary>
         /// <param name="key">The localization key to be converted.</param>
         public static implicit operator LocalSet(string key) => new(key, null);
+
+        /// <inheritdoc/>
+        public override readonly string ToString() => $"{LocalizationKey}{(Format.Length > 0 ? $" ({Format.JoinString()})" : string.Empty)}";
     }
 }
