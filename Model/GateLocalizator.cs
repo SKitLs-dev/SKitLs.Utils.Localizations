@@ -22,6 +22,20 @@ namespace SKitLs.Utils.Localizations.Model
         public const string LocalExtension = ".json";
 
         /// <inheritdoc/>
+        public override IEnumerable<LanguageCode> GetSupportedLanguages()
+        {
+            if (!Directory.Exists(LocalsPath))
+                return [];
+            
+            var languages = Directory.GetFiles(LocalsPath)
+                .Select(x => new FileInfo(x))
+                .Where(x => x.Extension == LocalExtension)
+                .Select(x => x.Name[..2])
+                .Distinct();
+            return languages.Select(LangHelper.FromTag);
+        }
+
+        /// <inheritdoc/>
         protected override string? InternalResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format)
         {
             if (!Directory.Exists(LocalsPath))

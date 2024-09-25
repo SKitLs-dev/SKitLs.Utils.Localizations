@@ -24,6 +24,9 @@ namespace SKitLs.Utils.Localizations.Model
         public string LocalsPath { get; private set; } = localsPath ?? throw new ArgumentNullException(nameof(localsPath));
 
         /// <inheritdoc/>
+        public abstract IEnumerable<LanguageCode> GetSupportedLanguages();
+
+        /// <inheritdoc/>
         public virtual string? ResolveString(LanguageCode? lang, string key, bool resolveDefault, params string?[] format) => InternalResolveString(lang, key, resolveDefault, format);
 
         /// <inheritdoc/>

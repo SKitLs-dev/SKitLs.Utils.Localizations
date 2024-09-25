@@ -33,6 +33,9 @@ namespace SKitLs.Utils.Localizations.Model
             LoadContent();
         }
 
+        /// <inheritdoc/>
+        public override IEnumerable<LanguageCode> GetSupportedLanguages() => Localizations.Values.SelectMany(x => x.Keys).Distinct();
+
         private void LoadContent()
         {
             if (!Directory.Exists(LocalsPath))

@@ -24,6 +24,12 @@ namespace SKitLs.Utils.Localizations.Localizators
         public string LocalsPath { get; }
 
         /// <summary>
+        /// Collects and returns the information about declared and supported languages.
+        /// </summary>
+        /// <returns>The <see cref="IEnumerable{T}"/> collection of the supported languages.</returns>
+        public IEnumerable<LanguageCode> GetSupportedLanguages();
+
+        /// <summary>
         /// Resolves the localized string for the specified language key and key identifier, with optional format parameters.
         /// </summary>
         /// <param name="lang">The language key for localization.</param>

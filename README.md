@@ -2,6 +2,7 @@
 
 Comprehensive localization package that facilitates seamless string translation and adaptation for diverse language contexts.
 
+
 ## Contents
 - [Setup](#Setup)
 - [Usage](#Usage)
@@ -9,6 +10,7 @@ Comprehensive localization package that facilitates seamless string translation 
 - [License](#License)
 - [Developer contact](#Developer-contact)
 - [Notes](#Notes)
+
 
 ## Setup
 
@@ -51,9 +53,11 @@ Comprehensive localization package that facilitates seamless string translation 
 Please note that each method may have specific requirements or configurations that need to be followed for successful installation.
 Refer to the project's documentation for any additional steps or considerations.
 
+
 ## Usage
 
 For documentation and usage examples [see wiki](https://github.com/SKitLs-dev/SKitLs.Utils.Localizations/wiki).
+
 
 ## Contributors
 
@@ -65,21 +69,24 @@ Your participation will be greatly appreciated in moving the project forward.
 
 Thank you for considering contributing to our project.
 
+
 ## License
 
 This project is distributed under the terms of the MIT License.
 
-Copyright (C) 2023-2024, Sargeras02
+Copyright (C) 2023-2024, SKitLs
+
 
 ## Developer contact
 
 For any issues related to the project, please feel free to reach out to us through the project's GitHub page.
 We welcome bug reports, feedback, and any other inquiries that can help us improve the project.
 
-You can also contact the project owner directly via their GitHub profile at the [following link](https://github.com/Sargeras02) or email: skitlsdev@gmail.com
+You can also contact the project owner directly via their GitHub profile at the [following link](https://github.com/SKitLs-Dev) or email: skitlsdev@gmail.com
 
 Your collaboration and support are highly appreciated, and we will do our best to address any concerns or questions promptly and professionally.
 Thank you for your interest in our project.
+
 
 ## Notes
 
